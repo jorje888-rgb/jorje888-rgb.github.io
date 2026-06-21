@@ -3,86 +3,150 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Portfolio</title>
+<title>Developer Portfolio</title>
 
 <style>
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
-    color: white;
-    overflow-x: hidden;
-
-    background: linear-gradient(-45deg, #0f172a, #1e3a8a, #6d28d9, #0ea5e9);
-    background-size: 400% 400%;
-    animation: gradientMove 12s ease infinite;
 }
 
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+body {
+    background: #0f172a;
+    color: #e2e8f0;
 }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 80px 20px;
-    text-align: center;
-}
-
-h1 {
-    font-size: 52px;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    opacity: 0.8;
-    font-size: 18px;
-}
-
-.card {
-    background: rgba(0,0,0,0.3);
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 12px;
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.4);
+    position: sticky;
+    top: 0;
     backdrop-filter: blur(10px);
+}
+
+nav a {
+    color: #93c5fd;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+.hero p {
+    color: #94a3b8;
+    margin-top: 10px;
+}
+
+/* SECTIONS */
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 10px;
+}
+
+/* CARDS */
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 15px;
     transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    background: rgba(0,0,0,0.5);
+    background: #24324a;
 }
 
-a {
-    color: #93c5fd;
+.tag {
+    display: inline-block;
+    background: #334155;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #64748b;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
-    <h1>Your Name</h1>
-    <div class="subtitle">Developer • Linux • Git • Web</div>
-
-    <div class="card">
-        <h2>About Me</h2>
-        <p>I build websites, learn Linux, and explore programming.</p>
+<nav>
+    <div><strong>Your Name</strong></div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </div>
+</nav>
 
-    <div class="card">
-        <h2>Projects</h2>
-        <p>Portfolio Website (GitHub Pages)</p>
-    </div>
-
-    <div class="card">
-        <h2>Contact</h2>
-        <p>GitHub: <a href="https://github.com/YOUR_USERNAME">YOUR_USERNAME</a></p>
-    </div>
-
+<div class="hero">
+    <h1>Hello, I'm a Developer 👋</h1>
+    <p>Linux • Git • Web Development • Building cool things</p>
 </div>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am a developer learning modern web technologies, Linux systems,
+        and software engineering fundamentals. I enjoy building projects
+        and improving my skills every day.
+    </p>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+        <strong>Portfolio Website</strong>
+        <p>My personal GitHub Pages portfolio.</p>
+        <div class="tag">HTML</div>
+        <div class="tag">CSS</div>
+    </div>
+
+    <div class="card">
+        <strong>More Coming Soon</strong>
+        <p>Building more real-world projects.</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+        GitHub: <a href="https://github.com/YOUR_USERNAME" style="color:#93c5fd;">YOUR_USERNAME</a><br><br>
+        Email: your.email@example.com
+    </div>
+</section>
+
+<footer>
+    © 2026 Your Name • Built with GitHub Pages
+</footer>
 
 </body>
 </html>
