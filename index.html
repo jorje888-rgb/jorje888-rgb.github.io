@@ -1,136 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Developer Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portfolio</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow-x: hidden;
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Inter, Arial, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-    }
+    background: linear-gradient(-45deg, #0f172a, #1e3a8a, #6d28d9, #0ea5e9);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+}
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-    .hero {
-      text-align: center;
-      padding: 60px 0;
-    }
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    text-align: center;
+}
 
-    h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
+h1 {
+    font-size: 52px;
+    margin-bottom: 10px;
+}
 
-    .subtitle {
-      color: #94a3b8;
-      font-size: 18px;
-    }
+.subtitle {
+    opacity: 0.8;
+    font-size: 18px;
+}
 
-    .section {
-      margin-top: 60px;
-    }
+.card {
+    background: rgba(0,0,0,0.3);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
 
-    h2 {
-      border-bottom: 1px solid #334155;
-      padding-bottom: 10px;
-    }
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(0,0,0,0.5);
+}
 
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      margin-top: 15px;
-      border-radius: 10px;
-      transition: 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      background: #24324a;
-    }
-
-    a {
-      color: #60a5fa;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #334155;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 12px;
-      margin-right: 5px;
-      margin-top: 5px;
-    }
-
-    .footer {
-      text-align: center;
-      margin-top: 60px;
-      color: #64748b;
-      font-size: 14px;
-    }
-  </style>
+a {
+    color: #93c5fd;
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-  <div class="hero">
     <h1>Your Name</h1>
-    <div class="subtitle">Aspiring Software Developer • Linux • Git • Web Dev</div>
-  </div>
-
-  <div class="section">
-    <h2>About Me</h2>
-    <p>
-      I am a developer learning to build modern web applications and Linux-based systems.
-      I enjoy creating projects, solving problems, and improving my coding skills every day.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Projects</h2>
+    <div class="subtitle">Developer • Linux • Git • Web</div>
 
     <div class="card">
-      <strong>Portfolio Website</strong>
-      <p>My personal website hosted on GitHub Pages.</p>
-      <span class="tag">HTML</span>
-      <span class="tag">CSS</span>
+        <h2>About Me</h2>
+        <p>I build websites, learn Linux, and explore programming.</p>
     </div>
 
     <div class="card">
-      <strong>More Projects Coming</strong>
-      <p>Currently building new tools and apps.</p>
+        <h2>Projects</h2>
+        <p>Portfolio Website (GitHub Pages)</p>
     </div>
-  </div>
 
-  <div class="section">
-    <h2>Contact</h2>
-    <p>
-      GitHub: <a href="https://github.com/YOUR_USERNAME">YOUR_USERNAME</a><br>
-      Email: your.email@example.com
-    </p>
-  </div>
-
-  <div class="footer">
-    © 2026 Your Name • Built with GitHub Pages
-  </div>
+    <div class="card">
+        <h2>Contact</h2>
+        <p>GitHub: <a href="https://github.com/YOUR_USERNAME">YOUR_USERNAME</a></p>
+    </div>
 
 </div>
 
