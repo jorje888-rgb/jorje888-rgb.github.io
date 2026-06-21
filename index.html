@@ -1,152 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Developer Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+<title>Jorge | Technology & Finance</title>
 
-body {
-    background: #0f172a;
-    color: #e2e8f0;
-}
-
-/* NAVBAR */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-    background: rgba(0,0,0,0.4);
-    position: sticky;
-    top: 0;
-    backdrop-filter: blur(10px);
-}
-
-nav a {
-    color: #93c5fd;
-    margin-left: 20px;
-    text-decoration: none;
-}
-
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.hero h1 {
-    font-size: 50px;
-}
-
-.hero p {
-    color: #94a3b8;
-    margin-top: 10px;
-}
-
-/* SECTIONS */
-section {
-    max-width: 900px;
-    margin: auto;
-    padding: 60px 20px;
-}
-
-h2 {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #334155;
-    padding-bottom: 10px;
-}
-
-/* CARDS */
-.card {
-    background: #1e293b;
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 15px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    background: #24324a;
-}
-
-.tag {
-    display: inline-block;
-    background: #334155;
-    padding: 5px 10px;
-    border-radius: 6px;
-    margin-top: 8px;
-    font-size: 12px;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 40px;
-    color: #64748b;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav>
-    <div><strong>Your Name</strong></div>
-    <div>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav>
-
-<div class="hero">
-    <h1>Hello, I'm a Developer 👋</h1>
-    <p>Linux • Git • Web Development • Building cool things</p>
+<div class="background">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
 </div>
 
+<nav>
+  <div class="logo">JORGE</div>
+
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#technology">Technology</a></li>
+    <li><a href="#finance">Finance</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <h1>Building Technology.<br>Understanding Finance.</h1>
+
+  <p>Software Engineering • Linux • AI • Finance</p>
+
+  <div class="buttons">
+    <a class="primary" href="#projects">Explore Work</a>
+    <a class="secondary" href="#contact">Contact</a>
+  </div>
+</header>
+
 <section id="about">
-    <h2>About Me</h2>
+  <h2>About</h2>
+  <div class="glass">
     <p>
-        I am a developer learning modern web technologies, Linux systems,
-        and software engineering fundamentals. I enjoy building projects
-        and improving my skills every day.
+      I'm Jorge. I build software and explore the intersection of technology and finance.
     </p>
+  </div>
+</section>
+
+<section id="technology">
+  <h2>Technology</h2>
+  <div class="grid">
+
+    <div class="card">Software Engineering</div>
+    <div class="card">Linux</div>
+    <div class="card">Artificial Intelligence</div>
+    <div class="card">Cybersecurity</div>
+
+  </div>
+</section>
+
+<section id="finance">
+  <h2>Finance</h2>
+  <div class="grid">
+
+    <div class="card">Investment Analysis</div>
+    <div class="card">Financial Modeling</div>
+    <div class="card">Market Research</div>
+    <div class="card">Risk Management</div>
+
+  </div>
 </section>
 
 <section id="projects">
-    <h2>Projects</h2>
+  <h2>Projects</h2>
+  <div class="grid">
 
-    <div class="card">
-        <strong>Portfolio Website</strong>
-        <p>My personal GitHub Pages portfolio.</p>
-        <div class="tag">HTML</div>
-        <div class="tag">CSS</div>
-    </div>
+    <div class="card">Portfolio Website</div>
+    <div class="card">Linux Automation</div>
+    <div class="card">AI Project</div>
 
-    <div class="card">
-        <strong>More Coming Soon</strong>
-        <p>Building more real-world projects.</p>
-    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <h2>Achievements</h2>
+
+  <div class="timeline">
+    <div class="event">2026 — Portfolio Website</div>
+    <div class="event">2025 — Linux Projects</div>
+    <div class="event">Future — Certifications</div>
+  </div>
 </section>
 
 <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-        GitHub: <a href="https://github.com/YOUR_USERNAME" style="color:#93c5fd;">YOUR_USERNAME</a><br><br>
-        Email: your.email@example.com
-    </div>
+  <h2>Contact</h2>
+
+  <div class="glass">
+    GitHub / Email / LinkedIn
+  </div>
 </section>
 
 <footer>
-    © 2026 Your Name • Built with GitHub Pages
+  © 2026 Jorge
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
