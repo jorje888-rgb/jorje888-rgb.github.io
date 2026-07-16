@@ -3,103 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title> LEVIATHAN ALPHA | Financial Analyst </title>
-
+<title>Your Name — Trader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="background">
-  <div class="blob blob1"></div>
-  <div class="blob blob2"></div>
-  <div class="blob blob3"></div>
-</div>
+  <!-- AMBIENT BACKGROUND -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
 
-<nav>
-  <div class="logo"> LEVIATHAN ALPHA </div>
-
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#finance">Finance</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<header class="hero">
-  <h1>Fighting the game of Financial Markets.<br>Backed By Data.</h1>
-
-  <p> Stocks • Commodities • Indexes </p>
-
-  <div class="buttons">
-    <a class="primary" href="#projects">Explore Work</a>
-    <a class="secondary" href="#contact">Contact</a>
+  <!-- TICKER TAPE -->
+  <div class="ticker-wrap">
+    <div class="ticker" id="ticker"></div>
   </div>
-</header>
 
-<a class="primary" href="https://canva.link/v4pbcs0n1dnhu7j" target="_blank">
-  View Full Portfolio
-</a>
-  
-<section id="about">
-  <h2>About</h2>
-  <div class="glass">
-    <p>
-      
-      LEVIATHAN ALPHA has 1 year worth of experience. 
-      
-      Jean, the founder of Leviathan, have discovered Trading through a classmate in his English class.
-      Jean was immersed in trading and was investing in BTC/USD in 2025, when BTC/USD has reached its all time highs. Jean created his first trading account using his allowance in 2024 when he was 17 years old. 
-      After winning a profit of $2,000. Jean continued his passion for trading and discovered XAU/USD and continued. Then stocks, forex, and indexes. Alongside Trading,
-      he also has a keen interest in spending his time through playing Chess and Minecraft. He strongly believes in the art of trading, as he also believed that he is like mastering life. 
-    </p>
-  </div>
-</section>
+  <!-- NAV -->
+  <nav class="nav">
+    <span class="nav-mark">◆ EDIT-ME CAPITAL</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#performance">Performance</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-clock">
+      <span id="market-status" class="status-dot"></span>
+      <span id="market-clock">--:--:--</span>
+    </div>
+  </nav>
 
-<section id="Credentials">
-  <h2>Credentials</h2>
-  <div class="grid">
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner reveal">
+      <p class="eyebrow">Personal Trading Profile</p>
+      <h1 class="hero-name">YOUR NAME<span class="cursor">_</span></h1>
+      <p class="hero-tagline">Discretionary swing trader · Equities &amp; options · Based in [Your City]</p>
+      <div class="hero-actions">
+        <a href="#performance" class="btn btn-primary">See performance</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+      <div class="hero-metrics">
+        <div class="hero-metric">
+          <span class="hero-metric-value" data-count="00.0" data-suffix="%">00.0%</span>
+          <span class="hero-metric-label">YTD Return</span>
+        </div>
+        <div class="hero-metric">
+          <span class="hero-metric-value" data-count="00">00</span>
+          <span class="hero-metric-label">Win Rate %</span>
+        </div>
+        <div class="hero-metric">
+          <span class="hero-metric-value" data-count="0.0">0.0</span>
+          <span class="hero-metric-label">Avg R:R</span>
+        </div>
+      </div>
+    </div>
 
-    <div class="card">SQL for Data Visualization</div>
-    <div class="card">Python Progamming</div>
-    <div class="card">Global Markets Sales and Trading Analyst</div>
-    <div class="card">Investment Banking Job Simulation</div>
+    <div class="hero-panel glass reveal">
+      <div class="panel-head">
+        <span>LIVE READOUT</span>
+        <span class="status-dot"></span>
+      </div>
+      <div class="readout-row">
+        <span class="readout-label">STATUS</span>
+        <span class="readout-value live">ACTIVE</span>
+      </div>
+      <div class="readout-row">
+        <span class="readout-label">STRATEGY</span>
+        <span class="readout-value">Momentum / Swing</span>
+      </div>
+      <div class="readout-row">
+        <span class="readout-label">MARKETS</span>
+        <span class="readout-value">US Equities, Options</span>
+      </div>
+      <div class="readout-row">
+        <span class="readout-label">SINCE</span>
+        <span class="readout-value">20XX</span>
+      </div>
+      <div class="mini-chart">
+        <svg viewBox="0 0 240 60" preserveAspectRatio="none">
+          <path id="mini-chart-path" d="" fill="none" stroke="var(--green)" stroke-width="2"/>
+          <path id="mini-chart-fill" d="" fill="url(#miniGradient)" stroke="none" opacity="0.25"/>
+          <defs>
+            <linearGradient id="miniGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="var(--green)"/>
+              <stop offset="100%" stop-color="transparent"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </header>
 
-  </div>
-</section>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-head reveal">
+      <span class="section-num">01</span>
+      <h2>About</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Replace this paragraph with your real story: how you got into trading, what pulled you in, and what your process looks like day to day. Keep it specific — the instrument you trade most, the timeframe you operate on, the mistake that taught you the most.</p>
+        <p>A second paragraph works well for credentials, background, or the philosophy that shapes your decisions. Mention any certifications, prior career, or mentors if relevant.</p>
+        <div class="tag-row">
+          <span class="tag">Swing Trading</span>
+          <span class="tag">Options</span>
+          <span class="tag">Risk Management</span>
+          <span class="tag">Technical Analysis</span>
+        </div>
+      </div>
+      <div class="about-photo reveal">
+        <div class="photo-placeholder glass">
+          <span>Add your photo</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="His Strategy">
-  <h2>Finance</h2>
-  <div class="grid">
+  <!-- PERFORMANCE -->
+  <section id="performance" class="section section-alt">
+    <div class="section-head reveal">
+      <span class="section-num">02</span>
+      <h2>Performance</h2>
+    </div>
 
-    <div class="card">Macro, Micro, and Technical</div>
-    <div class="card">Financial Modeling</div>
-    <div class="card">Market Research</div>
-    <div class="card">Risk Management</div>
+    <div class="chart-card glass reveal">
+      <div class="chart-card-head">
+        <div>
+          <span class="chart-label">Equity Curve</span>
+          <span class="chart-sub">Placeholder data — replace with your real account curve</span>
+        </div>
+        <div class="chart-value">
+          <span class="stat-up">+00.0%</span>
+        </div>
+      </div>
+      <svg class="equity-chart" viewBox="0 0 800 260" preserveAspectRatio="none">
+        <g class="grid-lines" id="chart-grid"></g>
+        <path id="equity-path" fill="none" stroke="var(--amber)" stroke-width="2.5"/>
+        <path id="equity-fill" fill="url(#equityGradient)" stroke="none"/>
+        <defs>
+          <linearGradient id="equityGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--amber)" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="var(--amber)" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
 
-  </div>
-</section>
+    <div class="stats-grid reveal">
+      <div class="stat-card glass">
+        <span class="stat-value stat-up">+00.0%</span>
+        <span class="stat-label">YTD Return</span>
+      </div>
+      <div class="stat-card glass">
+        <span class="stat-value">00%</span>
+        <span class="stat-label">Win Rate</span>
+      </div>
+      <div class="stat-card glass">
+        <span class="stat-value">0.0</span>
+        <span class="stat-label">Avg R:R</span>
+      </div>
+      <div class="stat-card glass">
+        <span class="stat-value">0 yrs</span>
+        <span class="stat-label">Experience</span>
+      </div>
+    </div>
+    <p class="disclaimer">Placeholder figures — replace with your verified performance data. Past performance does not guarantee future results.</p>
+  </section>
 
+  <!-- APPROACH -->
+  <section id="approach" class="section">
+    <div class="section-head reveal">
+      <span class="section-num">03</span>
+      <h2>Approach</h2>
+    </div>
+    <div class="approach-grid">
+      <div class="approach-card glass reveal">
+        <span class="approach-index">A</span>
+        <h3>Setup</h3>
+        <p>Describe the technical or fundamental conditions you look for before entering a trade.</p>
+      </div>
+      <div class="approach-card glass reveal">
+        <span class="approach-index">B</span>
+        <h3>Risk</h3>
+        <p>Describe your position sizing rules and how you cap downside on any single trade.</p>
+      </div>
+      <div class="approach-card glass reveal">
+        <span class="approach-index">C</span>
+        <h3>Exit</h3>
+        <p>Describe how you take profit or cut losses — rules over emotion.</p>
+      </div>
+    </div>
+  </section>
 
-  </div>
-</section>
+  <!-- CONTACT -->
+  <section id="contact" class="section section-alt">
+    <div class="section-head reveal">
+      <span class="section-num">04</span>
+      <h2>Contact</h2>
+    </div>
+    <div class="contact-grid">
+      <a href="mailto:you@example.com" class="contact-link glass reveal">
+        <span class="contact-label">Email</span>
+        <span class="contact-value">you@example.com</span>
+      </a>
+      <a href="https://twitter.com/yourhandle" class="contact-link glass reveal" target="_blank" rel="noopener">
+        <span class="contact-label">X / Twitter</span>
+        <span class="contact-value">@yourhandle</span>
+      </a>
+      <a href="https://linkedin.com/in/yourhandle" class="contact-link glass reveal" target="_blank" rel="noopener">
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value">/in/yourhandle</span>
+      </a>
+    </div>
+  </section>
 
-<section id="contact">
-  <h2>Contact</h2>
+  <footer class="footer">
+    <p>© 20XX Your Name. Not financial advice. For informational purposes only.</p>
+  </footer>
 
-  <div class="glass">
-     Email: jirehkanon@gmail.com / LinkedIn: J.E. Dizon
-  </div>
-</section>
-
-<footer>
-  © 2026 LEVIATHAN ALPHA
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
