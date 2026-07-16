@@ -1,16 +1,25 @@
 :root {
-  --bg: #0B1119;
-  --bg-alt: #0F1721;
-  --surface: #16212C;
-  --surface-glass: rgba(24, 36, 48, 0.55);
-  --border: #263544;
-  --border-soft: rgba(255,255,255,0.06);
-  --text: #E7ECF1;
-  --text-dim: #8CA0AF;
-  --amber: #D4A24C;
-  --amber-dim: #A67C34;
-  --green: #4CAF7D;
-  --red: #C2564A;
+  --bg: #08070A;
+  --bg-alt: #0C0A0F;
+  --surface: #17131C;
+  --surface-glass: rgba(26, 20, 32, 0.55);
+  --border: #332A3D;
+  --border-soft: rgba(255,255,255,0.07);
+  --text: #F0EAE2;
+  --text-dim: #9C93A8;
+
+  /* luxury accent set */
+  --gold: #D4AF37;
+  --gold-dim: #A6822A;
+  --emerald: #1E7A5C;
+  --wine: #8C2D4E;
+  --sapphire: #2C4A87;
+
+  /* functional aliases (kept so existing rules still read correctly) */
+  --amber: var(--gold);
+  --amber-dim: var(--gold-dim);
+  --green: var(--emerald);
+  --red: var(--wine);
 
   --font-display: 'Fraunces', serif;
   --font-body: 'Inter', sans-serif;
@@ -35,7 +44,93 @@ body {
 
 a { color: inherit; text-decoration: none; }
 
-/* AMBIENT BACKGROUND */
+/* AMBIENT SMOKE BACKGROUND */
+.smoke-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--bg);
+}
+
+.smoke {
+  position: absolute;
+  width: 70vw;
+  height: 70vw;
+  min-width: 600px;
+  min-height: 600px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+}
+
+.smoke-1 {
+  top: -20%;
+  left: -10%;
+  background: radial-gradient(circle at 40% 40%, var(--gold) 0%, transparent 65%);
+  animation: drift-1 34s ease-in-out infinite;
+}
+
+.smoke-2 {
+  top: 10%;
+  right: -15%;
+  background: radial-gradient(circle at 60% 50%, var(--sapphire) 0%, transparent 65%);
+  animation: drift-2 40s ease-in-out infinite;
+}
+
+.smoke-3 {
+  bottom: -25%;
+  left: 15%;
+  background: radial-gradient(circle at 50% 50%, var(--wine) 0%, transparent 65%);
+  animation: drift-3 46s ease-in-out infinite;
+}
+
+.smoke-4 {
+  bottom: -10%;
+  right: 5%;
+  width: 55vw;
+  height: 55vw;
+  min-width: 480px;
+  min-height: 480px;
+  background: radial-gradient(circle at 50% 50%, var(--emerald) 0%, transparent 65%);
+  animation: drift-4 38s ease-in-out infinite;
+}
+
+@keyframes drift-1 {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.5; }
+  30%  { transform: translate(12vw, 8vh) scale(1.15); opacity: 0.65; }
+  60%  { transform: translate(4vw, 16vh) scale(0.95); opacity: 0.45; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+}
+
+@keyframes drift-2 {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.45; }
+  35%  { transform: translate(-10vw, 12vh) scale(1.1); opacity: 0.6; }
+  70%  { transform: translate(-16vw, -4vh) scale(0.9); opacity: 0.4; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.45; }
+}
+
+@keyframes drift-3 {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.4; }
+  40%  { transform: translate(10vw, -10vh) scale(1.2); opacity: 0.55; }
+  75%  { transform: translate(16vw, -2vh) scale(0.95); opacity: 0.35; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+}
+
+@keyframes drift-4 {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.4; }
+  30%  { transform: translate(-8vw, -14vh) scale(0.9); opacity: 0.55; }
+  65%  { transform: translate(-14vw, -4vh) scale(1.15); opacity: 0.35; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smoke { animation: none; }
+}
+
 .bg-grid {
   position: fixed;
   inset: 0;
@@ -45,18 +140,15 @@ a { color: inherit; text-decoration: none; }
     linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
+  opacity: 0.5;
   pointer-events: none;
 }
 
-.bg-glow {
+.bg-vignette {
   position: fixed;
-  top: -20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 900px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(212,162,76,0.14) 0%, transparent 70%);
+  inset: 0;
   z-index: 0;
+  background: radial-gradient(ellipse 90% 80% at 50% 30%, transparent 40%, var(--bg) 95%);
   pointer-events: none;
 }
 
